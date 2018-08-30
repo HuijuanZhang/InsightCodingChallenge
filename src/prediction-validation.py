@@ -1,9 +1,9 @@
 # Read data
-act = [i.rstrip('\n').split(sep='|') for i in open('./input/actual.txt', 'r')]
-pred = [i.rstrip('\n').split(sep='|') for i in open('./input/predicted.txt', 'r')]
+act = [i.rstrip('\n').split(sep='|') for i in open('../input/actual.txt', 'r')]
+pred = [i.rstrip('\n').split(sep='|') for i in open('../input/predicted.txt', 'r')]
 
 # Read window size
-with open('./input/window.txt', 'r') as f:
+with open('../input/window.txt', 'r') as f:
     win = int(f.read()[0])
 
 # Create a dictionary for actual and predicted separately
@@ -28,7 +28,7 @@ for j in list(range(min([i[0] for i in dict_act.keys()]), max([i[0] for i in dic
     compar[(j, j+win-1)] = format(ave_err, '.2f')
 
 # Output to a text file
-f = open('./output/comparison.txt', 'w')
+f = open('../output/comparison.txt', 'w')
 for i in compar.items():
     f.write(str(i[0][0])+'|'+str(i[0][1])+'|'+i[1]+'\n')
 f.close()
