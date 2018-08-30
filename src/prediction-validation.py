@@ -1,6 +1,6 @@
 # Read data
-act = [i.rstrip('\n').split(sep='|') for i in open('../input/actual.txt', 'r')]
-pred = [i.rstrip('\n').split(sep='|') for i in open('../input/predicted.txt', 'r')]
+act = [i.rstrip('\n').split('|') for i in open('../input/actual.txt', 'r')]
+pred = [i.rstrip('\n').split('|') for i in open('../input/predicted.txt', 'r')]
 
 # Read window size
 with open('../input/window.txt', 'r') as f:
